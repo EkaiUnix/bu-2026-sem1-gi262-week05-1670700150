@@ -11,6 +11,25 @@ namespace Assignment
         #region Lecture
         public int[] LCT01_SelectionSortAscending(int[] numbers)
         {
+            int n = numbers.Length;
+            for (int i = 0; i < n - 1; i++)
+            {
+                int minIndex = i;
+                for (int j = i + 1; j < n; j++) 
+                {
+                    if (numbers[j] < numbers[minIndex]) 
+                    {
+                        minIndex = j;
+                    }
+                }
+                int temp = numbers[minIndex];
+                numbers[minIndex] = numbers[i];
+                numbers[i] = temp;
+            }
+            foreach (var n_ in numbers)
+            {
+                Debug.Log(n_);
+            }
             return numbers;
         }
 
